@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<main class="ui four cards container main-container">
+
+    {% for post in site.posts %}
+    <div class="ui raised link card" style="cursor: default;">
+       
+        <div class="content">
+          <div class="header"><a href="{{ post.url }}">{{post.title }}</a></div>
+          <div class="meta">
+            <span class="category">{{ post.category }}</span>
+          </div>
+          <div class="description">
+            <p>{{ post.description }}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="right floated author">
+            <img class="ui avatar image" src="{{ post.avatar }}"> {{ post.author }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+</main>

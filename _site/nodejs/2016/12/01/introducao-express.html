@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>David Alves</title>
+    <link href="/css/semantic.min.css" rel="stylesheet">  
+    <link href="/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+        <header>
+            <div class="ui secondary right menu container">
+        <div class="center menu">
+        <a class="item" href="/">Home</a>
+        <a class="item">Categorias</a>
+        <a class="item">Contato</a>
+        <a class="item" href="/about/index.html">Sobre</a>
+        <a class="item" href="https://github.com/david27alves" target="_blank">Github</a>
+      </div>
+      </div>
+            <div class="ui center aligned" style="padding-top: 50px; margin: auto; max-width: 50rem; text-align: center;">
+            <h1 class="ui center aligned header">
+                Introdução Express
+
+            </h1>
+            
+                <p >01 Dec 2016</p>
+            
+            </div>
+        </header>
+
+        <div class="ui container">
+            
+            <div class="ui breadcrumb">
+                <a class="section" href="/">Home</a>
+                <i class="right angle icon divider"></i>
+                <a class="section">nodejs</a>
+                <i class="right angle icon divider"></i>
+                <div class="active section">Introdução Express</div>
+            </div><br><br>
+            
+            
+            <p>Salve galera! Primeiro post vou ensinar como fazer um simples Hello World usando Node.js e Express, pra quem não sabe o Express é um framework para o Node.js que fornece um conjunto de recursos para aplicações web e móveis. </p>
+
+<p>Supondo que você já tenha o Node.js instalado na sua máquina vamos fazer a instalação do Express via NPM digitando o comando no terminal.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">npm</span> <span class="n">install</span> <span class="n">express</span> <span class="o">-</span><span class="n">g</span></code></pre></figure>
+
+<p>Usando o parâmetro -g estamos instalando o Express em modo global, assim da próxima vez que for usar, basta apenas fazer o require na aplicação sem a necessidade de instalar novamente.
+Próximo passo é criar um diretório onde ficarão todos os arquivos da aplicação, navegue até o diretório, crie um arquivo chamado app.js e nele inclua o seguinte código:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">var</span> <span class="n">express</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<span class="n">var</span> <span class="n">app</span> <span class="o">=</span> <span class="n">express</span><span class="p">();</span>
+
+<span class="n">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="n">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="n">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s1">'Example app listening on port 3000!'</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>O código inicia um servidor na porta 3000 e fica aguardando por conexões. Ele irá responder com a mensagem Hello World! à solicitação da rota raiz, no caso / e para qualquer rota que não seja a / ele irá responder com erro 404.
+Para executar a aplicação digite o comado no terminal.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">node</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span></code></pre></figure>
+
+<p>Em seguida navegue até a página http://localhost:3000/ em um navegador para ver a aplicação em funcionamento.</p>
+
+        </div>
+        <footer class="ui inverted vertical footer segment" style="margin-top: 2em">
+    <div class="ui centered aligned container">
+      <!--<div class="ui inverted section divider"></div>-->
+      <div class="ui horizontal centered inverted small divided link list">
+        David Alves desenvolvido com Jekyll
+      </div>
+    </div>
+    
+  </footer>
+  </body>
+</html>

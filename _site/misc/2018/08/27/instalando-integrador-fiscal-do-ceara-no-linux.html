@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>David Alves</title>
+    <link href="/css/semantic.min.css" rel="stylesheet">  
+    <link href="/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+        <header>
+            <div class="ui secondary right menu container">
+        <div class="center menu">
+        <a class="item" href="/">Home</a>
+        <a class="item">Categorias</a>
+        <a class="item">Contato</a>
+        <a class="item" href="/about/index.html">Sobre</a>
+        <a class="item" href="https://github.com/david27alves" target="_blank">Github</a>
+      </div>
+      </div>
+            <div class="ui center aligned" style="padding-top: 50px; margin: auto; max-width: 50rem; text-align: center;">
+            <h1 class="ui center aligned header">
+                Instalando Integrador Fiscal do Ceará no Linux
+
+            </h1>
+            
+                <p >27 Aug 2018</p>
+            
+            </div>
+        </header>
+
+        <div class="ui container">
+            
+            <div class="ui breadcrumb">
+                <a class="section" href="/">Home</a>
+                <i class="right angle icon divider"></i>
+                <a class="section">misc</a>
+                <i class="right angle icon divider"></i>
+                <div class="active section">Instalando Integrador Fiscal do Ceará no Linux</div>
+            </div><br><br>
+            
+            
+            <p>O Integrador Fiscal é uma aplicação desenvolvida pela Sefaz do Ceará que tem como finalidade gerenciar as informações que serão processadas pelo MFE (Módulo Fiscal Eletrônico). O MFE é semelhante ao SAT que é usado no estado de São Paulo, porém com algumas diferenças e bem menos estável, quem já trabalhou com ele sabe do que estou falando. 
+Atualmente ele pode ser instalado tanto no Windows quanto no Linux, a versão que usamos para testes foi o Ubuntu 16.04 32 bits, pode ser instalado no 64 bits também, instalando os devidos pacotes para a arquitetura.
+Os comandos devem ser executados na ordem como está descrito aqui, caso contrário corre o risco de não funcionar.</p>
+
+<h2 id="comando-ldd">Comando ldd</h2>
+<p>Primeiro passo é executar o comando abaixo, ele serve para listar a versão do ldd, caso seja menor que 2.12 ele não irá funcionar.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ldd</span> <span class="o">--</span><span class="n">version</span></code></pre></figure>
+
+<h2 id="instalação-do-mono">Instalação do Mono</h2>
+<p>Mono é um implementação do Framework .NET para uma ampla faixa de sistemas operacionais, dentre eles o Linux, ele será responsável por executar o nosso integrador.
+Os comandos acima irão adicionar o repositório no Mono e fazer a instalação, é comum que durante a instalação demore um pouco. O pacote axel é semelhante ao wget, usaremos ele para baixar os nossos arquivos.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">hkp</span><span class="ss">:/</span><span class="o">/</span><span class="n">keyserver</span><span class="p">.</span><span class="nf">ubuntu</span><span class="p">.</span><span class="nf">com</span><span class="p">:</span><span class="mi">80</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="mi">3</span><span class="no">FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span>
+<span class="n">echo</span> <span class="s2">"deb http://download.mono-project.com/repo/ubuntu xenial main"</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="p">.</span><span class="nf">list</span><span class="p">.</span><span class="nf">d</span><span class="o">/</span><span class="n">mono</span><span class="o">-</span><span class="n">official</span><span class="p">.</span><span class="nf">list</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">apt</span> <span class="n">list</span> <span class="o">--</span><span class="n">upgradable</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mono</span><span class="o">-</span><span class="n">complete</span> <span class="n">uuid</span><span class="o">-</span><span class="n">runtime</span> <span class="n">axel</span></code></pre></figure>
+
+<h2 id="download-dos-arquivos">Download dos arquivos</h2>
+<p>Agora vamos baixar e extrair arquivos de instalação.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">cd</span> <span class="o">~</span><span class="sr">/Downloads
+axel https:/</span><span class="o">/</span><span class="n">integrador</span><span class="p">.</span><span class="nf">blob</span><span class="p">.</span><span class="nf">core</span><span class="p">.</span><span class="nf">windows</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">integrador</span><span class="o">/</span><span class="n">instalador</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">sefaz</span><span class="o">-</span><span class="n">driver</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">-</span><span class="mo">02</span><span class="o">.</span><span class="mo">04</span><span class="o">.</span><span class="mo">07</span><span class="p">.</span><span class="nf">tar</span><span class="p">.</span><span class="nf">gz</span>
+<span class="n">ou</span> 
+<span class="n">axel</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">www</span><span class="p">.</span><span class="nf">sefaz</span><span class="p">.</span><span class="nf">ce</span><span class="p">.</span><span class="nf">gov</span><span class="p">.</span><span class="nf">br</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">aplicacao</span><span class="o">/</span><span class="n">internet</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">projetomfe</span><span class="o">/</span><span class="n">instalador</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">sefaz</span><span class="o">-</span><span class="n">driver</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x64</span><span class="o">-</span><span class="mo">02</span><span class="o">.</span><span class="mo">04</span><span class="o">.</span><span class="mi">09</span><span class="p">.</span><span class="nf">tar</span><span class="p">.</span><span class="nf">gz</span>
+<span class="n">axel</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">integrador</span><span class="p">.</span><span class="nf">blob</span><span class="p">.</span><span class="nf">core</span><span class="p">.</span><span class="nf">windows</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">linuxwithoutui</span><span class="o">/</span><span class="n">sqlite</span><span class="o">-</span><span class="n">netFx</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">105.2</span><span class="p">.</span><span class="nf">zip</span>
+<span class="n">axel</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">integrador</span><span class="p">.</span><span class="nf">blob</span><span class="p">.</span><span class="nf">core</span><span class="p">.</span><span class="nf">windows</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">linuxwithoutui</span><span class="o">/</span><span class="no">IntegradorLinuxServidor</span><span class="p">.</span><span class="nf">zip</span></code></pre></figure>
+
+
+        </div>
+        <footer class="ui inverted vertical footer segment" style="margin-top: 2em">
+    <div class="ui centered aligned container">
+      <!--<div class="ui inverted section divider"></div>-->
+      <div class="ui horizontal centered inverted small divided link list">
+        David Alves desenvolvido com Jekyll
+      </div>
+    </div>
+    
+  </footer>
+  </body>
+</html>

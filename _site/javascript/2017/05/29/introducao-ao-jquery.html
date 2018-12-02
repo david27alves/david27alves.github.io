@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>David Alves</title>
+    <link href="/css/semantic.min.css" rel="stylesheet">  
+    <link href="/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+        <header>
+            <div class="ui secondary right menu container">
+        <div class="center menu">
+        <a class="item" href="/">Home</a>
+        <a class="item">Categorias</a>
+        <a class="item">Contato</a>
+        <a class="item" href="/about/index.html">Sobre</a>
+        <a class="item" href="https://github.com/david27alves" target="_blank">Github</a>
+      </div>
+      </div>
+            <div class="ui center aligned" style="padding-top: 50px; margin: auto; max-width: 50rem; text-align: center;">
+            <h1 class="ui center aligned header">
+                Introdução ao JQuery
+
+            </h1>
+            
+                <p >29 May 2017</p>
+            
+            </div>
+        </header>
+
+        <div class="ui container">
+            
+            <div class="ui breadcrumb">
+                <a class="section" href="/">Home</a>
+                <i class="right angle icon divider"></i>
+                <a class="section">javascript</a>
+                <i class="right angle icon divider"></i>
+                <div class="active section">Introdução ao JQuery</div>
+            </div><br><br>
+            
+            
+            <p class="intro"><span class="dropcap">N</span>esse post vou dar uma breve introdução ao JQuery, um poderoso framework javascript capaz de criar animações, manipular eventos e simplificar o processo de criação com javascript.</p>
+<figure>
+  <img src="http://www.vikaskbh.com/wp-content/uploads/2014/01/jquery_logo.png" width="400px" alt="JQuery logo" />
+  <figcaption>Fig1. - Logo do JQuery.</figcaption>
+</figure>
+
+<p>Não é atoa que o slogan do JQuery é "Write less, do more.", ele surgiu para simplificar a maneira como escrevemos JavaScrip, veja o exemplo de um código escrito em JavaScript puro e o código escrito em JQuery.</p>
+
+<p>Pegar o conteúdo de uma div com o id="content" e armazear em uma variável usando JavaScript puro.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">var</span> <span class="n">content</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="s2">"#content"</span><span class="p">).</span><span class="nf">innerHTML</span><span class="p">;</span></code></pre></figure>
+
+<p>O mesmo código escrito usando JQuery</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">var</span> <span class="n">content</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="s2">"#content"</span><span class="p">).</span><span class="nf">innerHTML</span><span class="p">;</span></code></pre></figure>
+
+
+        </div>
+        <footer class="ui inverted vertical footer segment" style="margin-top: 2em">
+    <div class="ui centered aligned container">
+      <!--<div class="ui inverted section divider"></div>-->
+      <div class="ui horizontal centered inverted small divided link list">
+        David Alves desenvolvido com Jekyll
+      </div>
+    </div>
+    
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <link href="{{ base.url }}/css/semantic.min.css" rel="stylesheet">  
+    <link href="{{ base.url }}/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+        <header>
+            {% include nav.html %}
+            <div class="ui center aligned" style="padding-top: 50px; margin: auto; max-width: 50rem; text-align: center;">
+            <h1 class="ui center aligned header">
+                {{ page.title }}
+
+            </h1>
+            {% if page.date %}
+                <p >{{ page.date | date_to_string }}</p>
+            {% endif %}
+            </div>
+        </header>
+
+        <div class="ui container">
+            
+            <div class="ui breadcrumb">
+                <a class="section" href="{{ site.baseurl }}/">Home</a>
+                <i class="right angle icon divider"></i>
+                <a class="section">{{ page.category }}</a>
+                <i class="right angle icon divider"></i>
+                <div class="active section">{{ page.title }}</div>
+            </div><br><br>
+            
+            
+            {{ content }}
+        </div>
+        {% include footer.html %}
+  </body>
+</html>

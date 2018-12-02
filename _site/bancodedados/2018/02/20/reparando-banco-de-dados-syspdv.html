@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>David Alves</title>
+    <link href="/css/semantic.min.css" rel="stylesheet">  
+    <link href="/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+        <header>
+            <div class="ui secondary right menu container">
+        <div class="center menu">
+        <a class="item" href="/">Home</a>
+        <a class="item">Categorias</a>
+        <a class="item">Contato</a>
+        <a class="item" href="/about/index.html">Sobre</a>
+        <a class="item" href="https://github.com/david27alves" target="_blank">Github</a>
+      </div>
+      </div>
+            <div class="ui center aligned" style="padding-top: 50px; margin: auto; max-width: 50rem; text-align: center;">
+            <h1 class="ui center aligned header">
+                Reparando banco de dados Firebird
+
+            </h1>
+            
+                <p >20 Feb 2018</p>
+            
+            </div>
+        </header>
+
+        <div class="ui container">
+            
+            <div class="ui breadcrumb">
+                <a class="section" href="/">Home</a>
+                <i class="right angle icon divider"></i>
+                <a class="section">bancodedados</a>
+                <i class="right angle icon divider"></i>
+                <div class="active section">Reparando banco de dados Firebird</div>
+            </div><br><br>
+            
+            
+            <p>Bom dia leitores, últimamente estou tentando escrever para o blog, já que criei ele e sempre tive preguiça de escrever. :p <br />
+Atualmente trabalho em uma assistência que dá suporte no Syspdv, um sistema de automação comercial desenvolvido pela <a href="https://www.casamagalhaes.com.br/">Casa Magalhães</a>, e como forma de documentação dos problemas que encontro no dia, resolvi escrever aqui no blog, pois serve pra mim fazer consultas futuras e pra outras pessoas que enfrentem o mesmo problema.</p>
+
+<blockquote>
+  <p>Atenção: antes de realizar todo esse processo faça um backup do banco de dados!</p>
+</blockquote>
+
+<p>O Syspdv utiliza o Firebird como <a href="https://pt.wikipedia.org/wiki/Sistema_de_gerenciamento_de_banco_de_dados">SGBD</a> na grande maioria dos clientes, alguns utilizam o SQL Server por conta da base de dados já estar muito grande e o Firebird possuir problemas de desempenho nesses casos.</p>
+
+<p>Poderíamos utilizar vários programas para proceder com a recuperação do banco de dados, mas o próprio Firebird possui uma excelente ferramenta para isso.
+Esta ferramenta é o GFIX que se encontra instalado no diretório BIN do banco de dados e funciona em linha de comando no prompt do Windows.</p>
+
+<p>O primeiro passo é entrar no diretório bin do Firebird</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">C</span><span class="p">:\</span><span class="no">Program</span> <span class="no">Files</span><span class="p">\</span><span class="no">Firebird</span><span class="p">\</span><span class="no">Firebird_2_5</span><span class="p">\</span><span class="n">bin</span></code></pre></figure>
+
+<p>Ex.: C:\Program Files (x86)\Firebird\Firebird_2_5\bin OU C:\Program Files\Firebird\Firebird_2_5\bin</p>
+
+<p>Nesta pasta você irá copiar os arquivos <code class="highlighter-rouge">gfix.exe</code>, <code class="highlighter-rouge">gbak.exe</code>, <code class="highlighter-rouge">fbclient.dll</code> e colar na pasta do Syspdv <code class="highlighter-rouge">C:\Syspdv</code></p>
+
+<p>O segundo passo é renomear o banco de dados de syspdv_srv.fdb para 1syspdv_srv.fdb</p>
+
+<p>Abra o prompt de comando, clique no menu iniciar, digite cmd e execute. Quando abrir a tela do prompt navegue até a pasta do Syspdv.</p>
+
+<p>O prompt de comando irá iniciar no diretório “C:\Users\Usuario”.
+O comando cd serve para voltar um nível na árvore de diretórios, digite cd .. e o prompt irá para o diretório “C:\Users”, digite cd .. novamente e valtará para a raiz, agora navegue até a pasta do Syspdv digitando o comando cd Syspdv. Agora iremos iniciar o processo de reparação do banco.</p>
+
+<p>Digite os seguintes comando no prompt.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">set</span> <span class="n">isc_user</span><span class="o">=</span><span class="n">sysdba</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">set</span> <span class="n">isc_password</span><span class="o">=</span><span class="n">masterkey</span>
+ 
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gfix</span> <span class="o">-</span><span class="n">user</span> <span class="n">sysdba</span> <span class="o">-</span><span class="n">password</span> <span class="n">masterkey</span> <span class="o">-</span><span class="n">mo</span> <span class="n">read_only</span> <span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="p">\</span><span class="mi">1</span><span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>  <span class="sr">//m</span><span class="n">arca</span> <span class="n">o</span> <span class="n">banco</span> <span class="n">como</span> <span class="n">somente</span> <span class="n">leitura</span>
+ 
+ 
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gfix</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">f</span> <span class="mi">1</span><span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>                   <span class="sr">//</span> <span class="n">verificar</span> <span class="n">se</span> <span class="n">tem</span> <span class="n">erro</span> <span class="n">no</span> <span class="n">banco</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gfix</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">i</span> <span class="mi">1</span><span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>                <span class="sr">//</span> <span class="n">corrigi</span> <span class="n">erros</span> <span class="k">do</span> <span class="n">banco</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gbak</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">l</span> <span class="mi">1</span><span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span> <span class="n">srv</span><span class="p">.</span><span class="nf">fbk</span>  <span class="sr">//</span> <span class="n">backup</span> <span class="k">do</span> <span class="n">banco</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gbak</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="n">srv</span><span class="p">.</span><span class="nf">fbk</span> <span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>         <span class="sr">//</span> <span class="n">restaurar</span> <span class="n">banco</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gbak</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">n</span> <span class="n">srv</span><span class="p">.</span><span class="nf">gbk</span> <span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>      <span class="sr">//</span> <span class="n">desconsidera</span> <span class="n">os</span> <span class="s1">'null'</span>
+ 
+ 
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gfix</span> <span class="o">-</span><span class="n">user</span> <span class="n">sysdba</span> <span class="o">-</span><span class="n">password</span> <span class="n">masterkey</span> <span class="o">-</span><span class="n">mo</span> <span class="n">read_write</span> <span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="p">\</span><span class="no">Syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span>  <span class="sr">//m</span><span class="n">arcar</span> <span class="n">o</span> <span class="n">banco</span> <span class="n">com</span> <span class="n">permiss</span><span class="err">ã</span><span class="n">o</span> <span class="n">de</span> <span class="s2">"escrita"</span></code></pre></figure>
+
+<p>Caso não dê certo, use os seguintes comandos</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gbak</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">o</span> <span class="mi">1</span><span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span> <span class="n">srv</span><span class="p">.</span><span class="nf">fbk</span>
+<span class="no">C</span><span class="p">:\</span><span class="no">Syspdv</span><span class="o">&gt;</span><span class="n">gbak</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">o</span> <span class="n">srv</span><span class="p">.</span><span class="nf">fbk</span> <span class="n">syspdv_srv</span><span class="p">.</span><span class="nf">fdb</span></code></pre></figure>
+
+<p>Fonte: Suporte Casa Magalhães</p>
+
+
+        </div>
+        <footer class="ui inverted vertical footer segment" style="margin-top: 2em">
+    <div class="ui centered aligned container">
+      <!--<div class="ui inverted section divider"></div>-->
+      <div class="ui horizontal centered inverted small divided link list">
+        David Alves desenvolvido com Jekyll
+      </div>
+    </div>
+    
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <link href="{{ base.url }}/css/semantic.min.css" rel="stylesheet">  
+    <link href="{{ base.url }}/css/style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    
+    <header>
+      {% include nav.html %}
+      <h1 class="ui center aligned header header-title">
+        <img class="ui meduim circular image img-header" src="https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"><br> David Alves
+      </h1>
+    </header>
+
+
+    {{content}}
+
+    {% include footer.html %}
+
+  </body>
+</html>
