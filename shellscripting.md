@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /cursos/shellscripting.html
+permalink: /cursos/shellscripting.md
 ---
 
 <div class="ui container">
@@ -10,6 +10,7 @@ permalink: /cursos/shellscripting.html
         <div class="active section">Curso Shell Scripting</div>
     </div>
     
-    <h1>Tutorial Linux Shell Scripting (TLSS) v2.0</h1>
+    ## Tutorial Linux Shell Scripting (TLSS) v2.0
+    Written by Vivek Gite. Copyright 1999-2017 Vivek Gite and its contributors. Some rights reserved. 
     
 </div>
