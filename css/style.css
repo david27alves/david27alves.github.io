@@ -53,9 +53,9 @@ main-container {
   margin-bottom: 1.5em;
   padding: calc(30px + 1em) 1em 1em;
   border: 1px solid red;
-  border-radius: 2px;
-  box-shadow: 0 0.25em 1em rgba(255, 0, 0, 0.25);
-  background-color: red;
+  border-radius: 4px;
+  box-shadow: 0 0.25em 1em rgba(57, 62, 70, 0.25);
+  background-color: #393e46;
 }
 .language-terminal::before {
   content: "•••";
@@ -66,8 +66,8 @@ main-container {
   height: 30px;
   margin: 0;
   padding: 15px 0;
-  background: #ffbfbf;
-  color: #ff8080;
+  background: #cecfd1;
+  color: #9c9fa3;
   font-size: 60px;
   line-height: 0;
   text-indent: 15px;
