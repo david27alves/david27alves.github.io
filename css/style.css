@@ -46,3 +46,7 @@ main-container {
     color: #fff;
     font-weight: bold;
 }
+
+.language-terminal {
+    border: 1px solid silver;   
+}
