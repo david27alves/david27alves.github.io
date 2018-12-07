@@ -49,4 +49,8 @@ main-container {
 
 .language-terminal {
     border: 1px solid silver;   
+    width: 80%;
+    padding: 10px;
+    color: #fff;
+    background-color: red;
 }
