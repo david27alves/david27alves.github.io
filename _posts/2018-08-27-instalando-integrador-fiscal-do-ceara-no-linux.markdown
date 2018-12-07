@@ -15,7 +15,7 @@ Os comandos devem ser executados na ordem como está descrito aqui, caso contrá
 
 ## Comando ldd
 Primeiro passo é executar o comando abaixo, ele serve para listar a versão do ldd, caso seja menor que 2.12 ele não irá funcionar.
-{% highlight ruby %}
+{% highlight terminal %}
 ldd --version
 {% endhighlight %}
 
