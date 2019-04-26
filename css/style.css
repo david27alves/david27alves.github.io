@@ -12,6 +12,10 @@ header {
 
 }
 
+.date-post {
+    margin-bottom: 2em;   
+}
+
 .ui.secondary.menu .dropdown.item:hover, .ui.secondary.menu .link.item:hover, .ui.secondary.menu a.item:hover {
     color: #fff;
 }
