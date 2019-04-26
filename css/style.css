@@ -16,6 +16,10 @@ header {
     padding-bottom: 2em;   
 }
 
+.bottom-ajust {
+    padding-bottom: 1em;   
+}
+
 .ui.secondary.menu .dropdown.item:hover, .ui.secondary.menu .link.item:hover, .ui.secondary.menu a.item:hover {
     color: #fff;
 }
