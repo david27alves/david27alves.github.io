@@ -66,7 +66,9 @@ main-container {
  * Syntax highlighting styles
  */
 .highlight {
-  background-color: whitesmoke; }
+  background-color: #282c34;
+  padding: 10px;
+  color: #fff;}
   .highlighter-rouge .highlight {
     background-color: whitesmoke; }
   .highlight .c {
