@@ -26,7 +26,7 @@ Próximo passo é selecionar o período de geração do arquivo.
 Por fim selecione onde irá salvar o arquivo e clique em gerar relatórios.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/caminho-salvar.png" alt="GAD">
+  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/caminho-salvarr.png" alt="GAD">
   <figcaption>Fig2. - GAD.</figcaption>
 </figure>
 
