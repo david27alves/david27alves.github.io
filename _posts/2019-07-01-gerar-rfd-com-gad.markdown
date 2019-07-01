@@ -27,9 +27,11 @@ Por fim selecione onde irá salvar o arquivo e clique em gerar relatórios.
 
 <figure>
   <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/caminho-salvarr.png" alt="GAD">
-  <figcaption>Fig2. - GAD.</figcaption>
+  <figcaption>Fig3. - GAD.</figcaption>
 </figure>
 
+Espere até concluir, poderá demorar um pouco. No fim o arquivo será gerado no caminho onde você especificou.
+No meu caso ele salvou o arquivo em C:\Users\PDV-019\Desktop\rfd19\MACH 1\DR0812BR000000339673\Nota Fiscal Estadual\010719\1545\DR239673.V5J
 
 
 
