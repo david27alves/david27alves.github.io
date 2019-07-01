@@ -12,11 +12,23 @@ avatar: "https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"
 Em alguns casos é necessário gerar o arquivo RFD para importação das vendas no sistema, nas ECF Daruma uma alternativa fácil de geração desse arquivo é usando o GAD (Gerador de Arquivos DARUMA). Primeiro passo é realizar o download do GAD (http://bit.ly/15VaVzP), depois de realizar o download abra o executável e seleciona a opção Nota Fiscal Estadual.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/imh.png" width="400px" alt="GAD">
+  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/imh.png" alt="GAD">
   <figcaption>Fig1. - GAD.</figcaption>
 </figure>
 
+Próximo passo é selecionar o período de geração do arquivo.
 
+<figure>
+  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/iii.png" alt="GAD">
+  <figcaption>Fig2. - GAD.</figcaption>
+</figure>
+
+Por fim selecione onde irá salvar o arquivo e clique em gerar relatórios.
+
+<figure>
+  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/caminho-salvar.png" alt="GAD">
+  <figcaption>Fig2. - GAD.</figcaption>
+</figure>
 
 
 
