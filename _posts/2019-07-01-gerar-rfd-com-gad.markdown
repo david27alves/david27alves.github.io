@@ -13,21 +13,18 @@ Em alguns casos é necessário gerar o arquivo RFD para importação das vendas 
 
 <figure>
   <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/imh.png" alt="GAD">
-  <figcaption>Fig1. - GAD.</figcaption>
 </figure>
 
 Próximo passo é selecionar o período de geração do arquivo.
 
 <figure>
   <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/iii.png" alt="GAD">
-  <figcaption>Fig2. - GAD.</figcaption>
 </figure>
 
 Por fim selecione onde irá salvar o arquivo e clique em gerar relatórios.
 
 <figure>
   <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/caminho-salvarr.png" alt="GAD">
-  <figcaption>Fig3. - GAD.</figcaption>
 </figure>
 
 Espere até concluir, poderá demorar um pouco. No fim o arquivo será gerado no caminho onde você especificou.
