@@ -17,3 +17,8 @@ Para isso podemos usar a query:</p>
 {% highlight sql %}
 select * from pg_stat_activity;
 {% endhighlight %}
+
+<figure>
+  <img src="https://raw.githubusercontent.com/david27alves/david27alves.github.io/master/_posts/img/pgactivity.png" alt="GAD">
+  <figcaption>Fig1. - GAD</figcaption>
+</figure>
