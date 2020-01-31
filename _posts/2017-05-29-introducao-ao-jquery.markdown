@@ -12,7 +12,6 @@ avatar: "https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"
 <p class="intro"><span class="dropcap">N</span>esse post vou dar uma breve introdução ao JQuery, um poderoso framework javascript capaz de criar animações, manipular eventos e simplificar o processo de criação com javascript.</p>
 <figure>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/JQuery-Logo.svg/512px-JQuery-Logo.svg.png" alt="GAD">
-  <figcaption>Fig1. - GAD</figcaption>
 </figure>
 
 <p>Não é atoa que o slogan do JQuery é "Write less, do more.", ele surgiu para simplificar a maneira como escrevemos JavaScrip, veja o exemplo de um código escrito em JavaScript puro e o código escrito em JQuery.</p>
