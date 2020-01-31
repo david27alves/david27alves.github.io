@@ -3,7 +3,7 @@ layout: post
 title:  "Verificando conexões ativas no Postgres"
 description: "Como verificar quais são as conexões que estão ativas no Postgres."
 date:   2020-01-31
-category: "postgres"
+category: "database"
 author: "David Alves"
 avatar: "https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"
 ---
