@@ -4,7 +4,7 @@ title:  "Reparando banco de dados Firebird"
 description: "Como reparar um banco de dados Firebird usando as próprios ferramentas do Firebird, o GFIX e o GBAK."
 date:   2018-02-20
 comments: true
-category: "bancodedados"
+category: "database"
 author: "David Alves"
 avatar: "https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"
 ---
