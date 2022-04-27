@@ -29,8 +29,8 @@ console.log(numberFormat)
 
 <p>A função recebe alguns parâmetros, o primeiro deles é o locales, que recebe uma string com a tag da linguagem ‘pt-BR’, ele segue o padrão BCP 47, o segundo parâmetro é um objeto com dois atributos:</p>
 
-<p>style : o estilo do formato que será utilizado, podemos ter “decimal” para formato de números simples, “currency” para formato de moeda e “percent” para formato percentual.</p>
-<p>currency : qual moeda será utilizada para a formatação, ‘BRL’ para real brasileiro, ‘EUR’ para euro, ‘USD’ para dolar americano, ele segue o padrão ISO 4217.</p>
+<p>style: o estilo do formato que será utilizado, podemos ter “decimal” para formato de números simples, “currency” para formato de moeda e “percent” para formato percentual.</p>
+<p>currency: qual moeda será utilizada para a formatação, ‘BRL’ para real brasileiro, ‘EUR’ para euro, ‘USD’ para dolar americano, ele segue o padrão ISO 4217.</p>
 
 ### DateTimeFormat 
 
