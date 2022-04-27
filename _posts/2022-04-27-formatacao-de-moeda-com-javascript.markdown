@@ -5,9 +5,10 @@ description: "Como formatar moeda usando API nativa do JavaScript"
 date: 2022-04-27
 category: "javascript"
 author: "David Alves"
+avatar: "https://avatars1.githubusercontent.com/u/4975560?s=460&v=4"
 ---
 
-<p>Recentemente em um dos projetos que estou desenvolvendo senti a necessidade de fazer a formatação de um valor em float 4499.00 para reais R$ 4.499,00. Eis que então começo a dar uma pesquisada no Google e me deparo com uma API nativa do JavaScript que até então eu não conhecia, a Intl API.</p>
+<p>Recentemente em um dos projetos que estou desenvolvendo senti a necessidade de fazer a formatação de um valor em float `4499.00` para reais `R$ 4.499,00`. Eis que então começo a dar uma pesquisada no Google e me deparo com uma API nativa do JavaScript que até então eu não conhecia, a Intl API.</p>
 
 <p>Basicamente essa é uma API de internacionalização nativa do JavaScript que ajuda na formatação de valores como moeda, datas e horas.</p>
 
@@ -36,7 +37,7 @@ console.log(numberFormat)
 <p>A API Intl também permite realizar a formatação de data e horas com a função DateTimeFormat segue um pequeno exemplo de uso:</p>
 
 {% highlight ruby %}
-let dateFormat = new Intl.DateTimeFormat(‘pt-BR’).format(Date.now())
+let dateFormat = new Intl.DateTimeFormat('pt-BR').format(Date.now())
 
 console.log(dateFormat)
 
